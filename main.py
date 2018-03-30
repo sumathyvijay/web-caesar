@@ -11,19 +11,19 @@ page_header = """
 <html>
     <head>
         <style>
-            form {
+            form {{
                 background-color: #eee;
                 padding: 20px;
                 margin: 0 auto;
                 width: 540px;
                 font: 16px sans-serif;
                 border-radius: 10px;
-            }
+            }}
             textarea {
                 margin: 10px 0;
                 width: 540px;
                 height: 120px;
-            }
+            }}
         </style>
     </head>
     <body>
@@ -55,7 +55,7 @@ def encrypt():
     rot_value = int(request.form['rot'])
     text_value = request.form['text']    
     encrypted_text_value=rotate_string(text_value, rot_value)
-    return page_header + form.format(encrypted_text_value) + page_footer
+    return page_header.format() + form.format(encrypted_text_value) + page_footer.format()
 """.format(encrypted_text) """
 
 @app.route("/")    
